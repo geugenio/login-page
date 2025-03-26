@@ -1,10 +1,34 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <app-default-login-layout
- title="Login into your account" 
- primaryBtnText = "Login Now"
- secondaryBtnText = "Signup Now"
-
+    title="Login into your account" 
+    primaryBtnText = "Login Now"
+    secondaryBtnText = "Signup Now"
+    (submit)="submit()"
+    (navigate)="navigate()"
+    [disablePrimaryBtn]="!loginForm.valid"
  >
 
     <form [formGroup]="loginForm">
+
+        <app-primary-input
+            formControlName="email"
+            inputName ="email" 
+            type="email" 
+            label="Email" 
+            placeholder="emailname@gmail.com"
+        >
+            <img src="svg/email-icon.svg" alt="email icon">
+        </app-primary-input>
+
+        <app-primary-input 
+            formControlName="password"
+            inputName="password" 
+            type="password" 
+            label="Your password"
+        >
+            <img src="svg/password-icon.svg" alt="password icon">
+        </app-primary-input>
+        <span>Forgot password?</span>
+
     </form>
 </app-default-login-layout>

@@ -9,7 +9,7 @@
         </ng-content>
         
         <div class="btn-wrapper">
-            <button class="btn-primary">
+            <button class="btn-primary" (click) ="submit()" [disabled]="disablePrimaryBtn">
                 {{primaryBtnText}}
             </button>
             <div class="divider">
@@ -17,7 +17,7 @@
                 <span>OR</span>
                 <div></div>
             </div>
-            <button class="btn-secondary">
+            <button class="btn-secondary" (click)="navigate()">
                 {{secondaryBtnText}}
             </button>
         </div>
